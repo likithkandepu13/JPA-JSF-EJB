@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <title>EJB DB</title>
+    <style>
+        .table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        .table, .table th, .table td {
+            border: 1px solid black;
+        }
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h3>Add</h3>
+    <h:form>
+        <p>Employee ID: <h:inputText value="#{e.eid}"/></p>
+        <p>Employee Name: <h:inputText value="#{e.name}"/></p>
+        <p>Employee Sal: <h:inputText value="#{e.sal}"/></p>
+        <p><h:outputLabel value="#{e.response}"/></p>
+        <table>
+            <tr>
+                <td><h:commandButton action="#{e.save()}" value="Insert"/></td>
+                <td><h:commandButton action="#{e.update()}" value="Update"/></td>
+                <td><h:commandButton action="#{e.delete()}" value="Delete"/></td>
+            </tr>
+        </table>
+        <h3>Emp Details</h3>
+        <h:dataTable value="#{e.list}" var="r" styleClass="table">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Emp Id"/>
+                </f:facet>
+                <h:outputText value="#{r.eid}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Emp Name"/>
+                </f:facet>
+                <h:outputText value="#{r.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Emp Sal"/>
+                </f:facet>
+                <h:outputText value="#{r.sal}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>DeleteExpiredItemsServlet</servlet-name>
+  	<display-name>DeleteExpiredItemsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.DeleteExpiredItemsServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CreateStockTableServlet</servlet-name>
+  	<display-name>CreateStockTableServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.CreateStockTableServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddItemsServlet</servlet-name>
+  	<display-name>AddItemsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.AddItemsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DeleteExpiredItemsServlet</servlet-name>
+  	<url-pattern>/DeleteExpiredItemsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateStockTableServlet</servlet-name>
+  	<url-pattern>/CreateStockTableServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddItemsServlet</servlet-name>
+  	<url-pattern>/AddItemsServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
